@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090c">
+  <meta name="description" content="$!D — Uma comunidade aberta que conecta pessoas, ideias e tecnologia.">
+  <title>$!D — One vision. All possibilities.</title>
+  <style>
+    :root{--bg:#08090c;--panel:#11141b;--line:#282d38;--silver:#d9dde6;--muted:#a4aab7;--white:#f7f8fb;--accent:#aeb8ca}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:#08090ceF;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff12}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:30px;font-weight:900;letter-spacing:-2px}.brand span{color:#aeb8ca}
+    .navlinks{display:flex;align-items:center;gap:25px;color:var(--muted);font-size:13px}.navlinks a:hover{color:white}
+    .controls{display:flex;align-items:center;gap:10px}.lang,.menu{border:1px solid var(--line);background:#11141b;color:white;border-radius:99px;padding:9px 13px;cursor:pointer;font-weight:700}.menu{display:none}
+    .hero{min-height:690px;display:grid;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid #ffffff12}
+    .hero:before{content:"";position:absolute;width:650px;height:650px;right:-110px;top:20px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#dce4f022,#8a9ab622 20%,#3d4b6510 45%,transparent 68%);filter:blur(3px)}
+    .hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,transparent,#000 25%,#000 80%,transparent);pointer-events:none}
+    .hero-inner{position:relative;z-index:1;padding:100px 0 115px;max-width:760px}
+    .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:800}
+    h1{font-size:clamp(52px,9vw,104px);line-height:.98;letter-spacing:-.07em;margin:24px 0 22px;font-weight:850}
+    h1 em{font-style:normal;color:#aeb8ca}.lead{font-size:clamp(17px,2vw,20px);color:#b9bfca;max-width:610px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}.btn{padding:14px 21px;border-radius:7px;font-size:13px;font-weight:800;letter-spacing:.3px;border:1px solid #596273;display:inline-flex;align-items:center;justify-content:center;transition:.2s}
+    .btn.primary{background:var(--silver);color:#090b10;border-color:var(--silver)}.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    .micro{margin-top:42px;color:#737b8a;font-size:11px;letter-spacing:1.4px;text-transform:uppercase}
+    section{padding:100px 0;border-bottom:1px solid #ffffff12}.section-head{max-width:680px;margin-bottom:42px}.section-head h2{font-size:clamp(34px,5vw,56px);letter-spacing:-.055em;line-height:1.05;margin:14px 0}.section-head p{color:var(--muted);font-size:16px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:linear-gradient(145deg,#151923,#0d0f14);border:1px solid var(--line);border-radius:12px;padding:25px;min-height:210px}
+    .num{font-size:12px;color:#aeb8ca;letter-spacing:2px}.card h3{font-size:20px;margin:30px 0 8px}.card p{font-size:14px;color:var(--muted);margin:0}
+    .manifesto{background:linear-gradient(120deg,#121722,#090a0e 65%);border:1px solid var(--line);border-radius:14px;padding:clamp(25px,5vw,55px);display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+    .manifesto h2{font-size:clamp(32px,5vw,56px);line-height:1.05;letter-spacing:-.05em;margin:12px 0}.manifesto p{color:var(--muted)}
+    .orb{aspect-ratio:1;border-radius:50%;max-width:280px;margin:auto;background:radial-gradient(circle at 35% 30%,#f5f7ff,#9ca9bd 12%,#4a5569 28%,#171c27 53%,#090a0e 70%);box-shadow:0 0 80px #9baac022, inset -25px -25px 45px #000}
+    .community{display:flex;justify-content:space-between;gap:30px;align-items:center;background:#d9dde6;color:#080a0e;padding:clamp(28px,5vw,55px);border-radius:14px}
+    .community h2{font-size:clamp(32px,5vw,52px);line-height:1.05;letter-spacing:-.05em;margin:10px 0}.community p{max-width:550px;color:#333b49}.community .btn{border-color:#080a0e;background:#080a0e;color:white;white-space:nowrap}
+    footer{padding:35px 0;color:#777f8e;font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}.foot strong{font-size:23px;color:white;letter-spacing:-1px}
+    @media(max-width:760px){.navlinks{display:none}.menu{display:block}.grid{grid-template-columns:1fr}.hero{min-height:620px}.hero:before{right:-300px;top:150px}.manifesto{grid-template-columns:1fr}.orb{max-width:190px}.community{align-items:flex-start;flex-direction:column}.foot{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#">$<span>!</span>D</a>
+  <nav class="navlinks"><a href="#visao" data-pt="Visão" data-en="Vision">Visão</a><a href="#pilares" data-pt="Comunidade" data-en="Community">Comunidade</a><a href="#manifesto" data-pt="Manifesto" data-en="Manifesto">Manifesto</a></nav>
+  <div class="controls"><button class="lang" id="lang" aria-label="Change language">EN</button><a class="btn primary" href="#comunidade" data-pt="Faça parte" data-en="Join us">Faça parte</a></div>
+</div></header>
+<main>
+  <div class="hero" id="visao"><div class="wrap"><div class="hero-inner">
+    <div class="eyebrow" data-pt="Uma comunidade sem fronteiras" data-en="A community without borders">Uma comunidade sem fronteiras</div>
+    <h1 data-pt="O FUTURO<br><em>NÃO TEM FRONTEIRAS.</em>" data-en="THE FUTURE<br><em>HAS NO BORDERS.</em>">O FUTURO<br><em>NÃO TEM FRONTEIRAS.</em></h1>
+    <p class="lead" data-pt="A $!D é uma visão em construção para conectar pessoas, ideias e tecnologia. Um espaço para descobrir, compartilhar e construir novas possibilidades — juntos." data-en="$!D is a vision in the making, connecting people, ideas and technology. A space to discover, share and build new possibilities — together.">A $!D é uma visão em construção para conectar pessoas, ideias e tecnologia. Um espaço para descobrir, compartilhar e construir novas possibilidades — juntos.</p>
+    <div class="actions"><a class="btn primary" href="#comunidade" data-pt="ENTRE PARA A COMUNIDADE" data-en="JOIN THE COMMUNITY">ENTRE PARA A COMUNIDADE</a><a class="btn" href="#manifesto" data-pt="CONHEÇA NOSSA VISÃO" data-en="DISCOVER OUR VISION">CONHEÇA NOSSA VISÃO</a></div>
+    <div class="micro" data-pt="Pessoas · Ideias · Tecnologia · Possibilidades" data-en="People · Ideas · Technology · Possibilities">Pessoas · Ideias · Tecnologia · Possibilidades</div>
+  </div></div></div>
+  <section id="pilares"><div class="wrap">
+    <div class="section-head"><div class="eyebrow" data-pt="Uma visão. Muitas possibilidades." data-en="One vision. Many possibilities.">Uma visão. Muitas possibilidades.</div><h2 data-pt="Diferentes caminhos.<br>Uma comunidade." data-en="Different paths.<br>One community.">Diferentes caminhos.<br>Uma comunidade.</h2><p data-pt="Tecnologia, criatividade, negócios e cultura podem se encontrar. A $!D quer abrir espaço para conversas e colaborações entre pessoas de diferentes áreas." data-en="Technology, creativity, business and culture can meet. $!D aims to create space for conversations and collaborations among people from different fields.">Tecnologia, criatividade, negócios e cultura podem se encontrar. A $!D quer abrir espaço para conversas e colaborações entre pessoas de diferentes áreas.</p></div>
+    <div class="grid">
+      <article class="card"><div class="num">01 / CONNECT</div><h3 data-pt="Conectar pessoas" data-en="Connect people">Conectar pessoas</h3><p data-pt="Aproximar diferentes experiências, talentos e perspectivas." data-en="Bring different experiences, talents and perspectives together.">Aproximar diferentes experiências, talentos e perspectivas.</p></article>
+      <article class="card"><div class="num">02 / DISCOVER</div><h3 data-pt="Explorar ideias" data-en="Explore ideas">Explorar ideias</h3><p data-pt="Compartilhar conhecimento, tendências e novas possibilidades." data-en="Share knowledge, trends and new possibilities.">Compartilhar conhecimento, tendências e novas possibilidades.</p></article>
+      <article class="card"><div class="num">03 / BUILD</div><h3 data-pt="Construir juntos" data-en="Build together">Construir juntos</h3><p data-pt="Transformar boas conversas em projetos, parcerias e iniciativas reais." data-en="Turn good conversations into real projects, partnerships and initiatives.">Transformar boas conversas em projetos, parcerias e iniciativas reais.</p></article>
+    </div>
+  </div></section>
+  <section id="manifesto"><div class="wrap"><div class="manifesto">
+    <div><div class="eyebrow" data-pt="O manifesto $!D" data-en="The $!D manifesto">O manifesto $!D</div><h2 data-pt="Não queremos criar mais uma bolha. Queremos conectar todas elas." data-en="We don't want to create another bubble. We want to connect them all.">Não queremos criar mais uma bolha. Queremos conectar todas elas.</h2><p data-pt="Acreditamos que o futuro é construído quando pessoas diferentes compartilham ideias e criam em conjunto. A $!D começa com uma comunidade e cresce com participação, transparência e propósito." data-en="We believe the future is built when different people share ideas and create together. $!D starts with a community and grows through participation, transparency and purpose.">Acreditamos que o futuro é construído quando pessoas diferentes compartilham ideias e criam em conjunto. A $!D começa com uma comunidade e cresce com participação, transparência e propósito.</p></div>
+    <div class="orb" aria-label="Abstract metallic sphere"></div>
+  </div></div></section>
+  <section id="comunidade"><div class="wrap"><div class="community">
+    <div><div class="eyebrow" data-pt="O próximo capítulo começa aqui" data-en="The next chapter starts here">O próximo capítulo começa aqui</div><h2 data-pt="A comunidade é o começo." data-en="Community is the beginning.">A comunidade é o começo.</h2><p data-pt="Acompanhe a construção da $!D, participe das conversas e ajude a moldar o que vem pela frente." data-en="Follow the making of $!D, join the conversations and help shape what comes next.">Acompanhe a construção da $!D, participe das conversas e ajude a moldar o que vem pela frente.</p></div>
+    <a class="btn" href="mailto:hello@sid.example?subject=$!D%20Community" data-pt="FALE COM A $!D" data-en="CONTACT $!D">FALE COM A $!D</a>
+  </div></div></section>
+</main>
+<footer><div class="wrap foot"><strong>$!D</strong><span data-pt="Uma visão em construção. Feita para conectar." data-en="A vision in the making. Built to connect.">Uma visão em construção. Feita para conectar.</span><span>© <span id="year"></span> $!D</span></div></footer>
+<script>
+  let language='pt';
+  const langButton=document.getElementById('lang');
+  function setLanguage(next){
+    language=next;document.documentElement.lang=next==='pt'?'pt-BR':'en';
+    document.querySelectorAll('[data-pt]').forEach(el=>{el.innerHTML=el.dataset[next]});
+    langButton.textContent=next==='pt'?'EN':'PT';
+  }
+  langButton.addEventListener('click',()=>setLanguage(language==='pt'?'en':'pt'));
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
